@@ -40,7 +40,11 @@ class TestAddCoinsToWallet(unittest.TestCase):
         
         
     def test_add_coins(self):
-        coins_list = [coins.Quarter, coins.Dime, coins.Nickel,coins.Penny]
+        quarters = coins.Quarter()
+        dimes = coins.Dime()
+        nickel = coins.Nickel()
+        penny = coins.Penny()
+        coins_list = [quarters, dimes, nickel, penny]
         added_coins = self.customer.add_coins_to_wallet(coins_list)
         self.assertEqual(added_coins, coins_list)
         
