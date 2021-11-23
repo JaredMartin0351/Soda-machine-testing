@@ -3,6 +3,7 @@ import user_interface
 from wallet import Wallet
 from customer import Customer
 from backpack import Backpack
+import coins
 
 
 class TestGetWalletCoin(unittest.TestCase):
@@ -39,8 +40,9 @@ class TestAddCoinsToWallet(unittest.TestCase):
         
         
     def test_add_coins(self):
-        added_coins = self.customer.add_coins_to_wallet()
-        self.assertEqual(added_coins.name, )
+        coins_list = [coins.Quarter, coins.Dime, coins.Nickel,coins.Penny]
+        added_coins = self.customer.add_coins_to_wallet(coins_list)
+        self.assertEqual(added_coins, coins_list)
         
 #    def test_add_dime(self):
 #        added_coin = self.customer.add_coins_to_wallet('Dime')
