@@ -3,6 +3,7 @@ import unittest
 
 
 class TestCoinName(unittest.TestCase):
+    """Test the names of the coins objects in the Coin class"""
     
     def test_quarter_name(self):        
         quarter = Quarter()

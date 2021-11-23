@@ -3,6 +3,7 @@ import user_interface
 from wallet import Wallet
 from customer import Customer
 from backpack import Backpack
+from cans import Can, Cola
 import coins
 
 
@@ -71,6 +72,20 @@ class TestAddCoinsToWallet(unittest.TestCase):
         coins_list = [penny]
         self.customer.add_coins_to_wallet(coins_list)
         self.assertEqual(coins_list[0], penny)
+        
+        
+class TestAddCanToBackpack(unittest.TestCase):
+    """Test to add can to customers backpack"""
+    def setUp(self):
+        self.customer = Customer()
+        self.backpack = Backpack()
+        self.can = Can()
+        
+    def test_add_can(self):
+        """Adding a can object to the list of purchased cans"""
+        can = Cola()
+        purchased_cans = [can]
+        self.backpack.purchased_cans.add_can_to_backpack
         
 if __name__ == '__main__':
     unittest.main()
