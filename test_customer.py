@@ -38,9 +38,9 @@ class TestAddCoinsToWallet(unittest.TestCase):
         self.customer = Customer()
         
         
-    def test_add_quarter(self):
-        added_coin = self.customer.add_coins_to_wallet()
-        self.assertEqual(added_coin.name, )
+    def test_add_coins(self):
+        added_coins = self.customer.add_coins_to_wallet()
+        self.assertEqual(added_coins.name, )
         
 #    def test_add_dime(self):
 #        added_coin = self.customer.add_coins_to_wallet('Dime')
