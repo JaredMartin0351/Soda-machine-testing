@@ -1,3 +1,4 @@
+from coins import Quarter,Dime,Nickel,Penny
 from cans import RootBeer, Cola, OrangeSoda
 import random
 import unittest
@@ -35,7 +36,7 @@ class Testuserinterface(unittest.TestCase):
 # b. Pass in a different number, ensure (False, None) is returned
 
 
-class test_try_parse(unittest.TestCase):
+class TestTryParse(unittest.TestCase):
     def test_try_parse_int_withint(self):
         truenumber = user_interface.try_parse_int(10)
         self.assertEqual(truenumber,10)
@@ -57,14 +58,29 @@ class test_try_parse(unittest.TestCase):
 # try_parse_int – 2 tests
 # a. Pass in “10”, ensure the int value 10 is returned
 # b. Pass in “hello”, ensure 0 is returned
-class test_get_unique_can_names(unittest.TestCase):
-    def test_can_name(self):
+class TestGetUniqueCanNames(unittest.TestCase):
+    def test_can_name_list(self):
         rootbeer = RootBeer()
         rootbeer2 = RootBeer()
         cola = Cola()
         cola2 = Cola()
         orangesoda = OrangeSoda()
         orangesoda2 = OrangeSoda()
+        list_of_can = []
+        list_of_can.append(rootbeer)
+        list_of_can.append(rootbeer2)
+        list_of_can.append(cola)
+        list_of_can.append(cola2)
+        list_of_can.append(orangesoda)
+        list_of_can.append(orangesoda2)
+        can_checker = user_interface.get_unique_can_names(list_of_can)
+        self.assertNotEqual(can_checker,list_of_can)
+
+    def test_can_list_return(self):
+        can_list = []
+        check_list = user_interface.get_unique_can_names(can_list)
+
+        self.assertEqual(can_list,check_list)
 
 
 
@@ -84,6 +100,25 @@ class test_get_unique_can_names(unittest.TestCase):
     #         unique_cans.append(can)
     #         previous_names.append(can.name)
     # return unique_cans
+
+
+class TestDisplayPaymentValue(unittest.TestCase):
+    def test_coin_value(self):
+        quarter = Quarter()
+        dime = Dime()
+        nickel = Nickel()
+        penny = Penny()
+        list_value_41 =[]
+        list_value_41.append(quarter)
+        list_value_41.append(dime)
+        list_value_41.append(nickel)
+        list_value_41.append(penny)
+        truelist = user_interface.display_payment_value(list_value_41)
+        self.assertEqual(truelist , .41)
+# display_payment_value – 2 tests
+# a. Instantiate each of the 4 coin types and append them to a list. Pass the list into this function, ensure the returned values is .41
+# b. Pass in an empty list. Ensure the returned value is 0.
+
 
 
 
