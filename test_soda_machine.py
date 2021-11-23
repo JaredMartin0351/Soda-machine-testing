@@ -16,7 +16,7 @@ class SodaMachine(unittest.TestCase): #Soda Machine Class
     def fill_inventory(self):    # fill inventory 
         pass 
     
-    
+
     def get_coin_from_register(self):  # get coin from register
         pass 
 
