@@ -1,5 +1,10 @@
 import unittest
 from soda_machine import SodaMachine
+from coins import Coin 
+from wallet import Wallet
+
+machine = SodaMachine()
+x = self.money 
 
 class SodaMachine(unittest.TestCase): #Soda Machine Class 
     """Tests for Soda Machine inventory and register functions"""
@@ -7,16 +12,22 @@ class SodaMachine(unittest.TestCase): #Soda Machine Class
     def setUp(self):  # each test reruns set up for fresh start 
         """Sets up testing environment"""
         """Instantiates SodaMachine to test"""
-    
+        self.SodaMachine = SodaMachine()
+        
+    #######
     def fill_register(self): # fill register 
         """Test that register is full of coinage"""
-        self....('Quarter')
-        self.assertEqual('Quarter', self.soda_machine.register[1])
-        
+        self.SodaMachine = SodaMachine()
+        x = self.SodaMachine.fill_register.len(self.money)
+        self.assertEqual(self.SodaMachine.fill_register.result.len[x], "Coins")
+
+    #########
     def fill_inventory(self):    # fill inventory 
+        self.sodamachine = SodaMachine()
+        self.SodaMachine.fill_inventory.len(30)
+        self.assertEqual(self.SodaMachine.fill_inventory.result.len[30], "Coins")
         pass 
     
-
     def get_coin_from_register(self):  # get coin from register
         pass 
 
