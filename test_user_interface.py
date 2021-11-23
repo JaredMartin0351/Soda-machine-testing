@@ -1,3 +1,4 @@
+from cans import RootBeer, Cola, OrangeSoda
 import random
 import unittest
 import user_interface
@@ -34,7 +35,57 @@ class Testuserinterface(unittest.TestCase):
 # b. Pass in a different number, ensure (False, None) is returned
 
 
-class test_try_parse(unit)
+class test_try_parse(unittest.TestCase):
+    def test_try_parse_int_withint(self):
+        truenumber = user_interface.try_parse_int(10)
+        self.assertEqual(truenumber,10)
+
+    def test_try_parse_int_withstr(self):
+        string = user_interface.try_parse_int("hello")
+        self.assertEqual(string,0)
+
+
+    
+   
+# def try_parse_int(value):
+#     """Attempts to parse a string into an integer, returns 0 if unable to parse"""
+#     try:
+#         return int(value)
+#     except:
+#         return 0
+
+# try_parse_int – 2 tests
+# a. Pass in “10”, ensure the int value 10 is returned
+# b. Pass in “hello”, ensure 0 is returned
+class test_get_unique_can_names(unittest.TestCase):
+    def test_can_name(self):
+        rootbeer = RootBeer()
+        rootbeer2 = RootBeer()
+        cola = Cola()
+        cola2 = Cola()
+        orangesoda = OrangeSoda()
+        orangesoda2 = OrangeSoda()
+
+
+
+
+
+
+
+
+    # def get_unique_can_names(inventory):
+    # """Loops through inventory to create a list of all distinct types of sodas available"""
+    # unique_cans = []
+    # previous_names = []
+    # for can in inventory:
+    #     if can.name in previous_names:
+    #         continue
+    #     else:
+    #         unique_cans.append(can)
+    #         previous_names.append(can.name)
+    # return unique_cans
+
+
 
 if __name__ == "__main__":
     unittest.main()
