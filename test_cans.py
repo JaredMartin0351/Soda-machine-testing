@@ -3,6 +3,7 @@ import unittest
 
 
 class TestCanName(unittest.TestCase):
+    """Test the names of the cans object in the Can class"""
     
     def test_cola_name(self):        
         cola = Cola()
