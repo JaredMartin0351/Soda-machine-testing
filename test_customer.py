@@ -9,6 +9,7 @@ import coins
 class TestGetWalletCoin(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
+        self.wallet = Wallet()
     
     
     def test_get_quarter(self):
@@ -37,24 +38,43 @@ class TestGetWalletCoin(unittest.TestCase):
 class TestAddCoinsToWallet(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
+        self.wallet = Wallet()
+    
         
         
-    def test_add_coins(self):
-        coins_list = [coins.Quarter, coins.Dime, coins.Nickel,coins.Penny]
-        added_coins = self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(added_coins, coins_list)
+#    def test_add_coins_to_wallet(self):
+#        self.wallet.money = Wallet()
+#        quarter = coins.Quarter()
+#        dime = coins.Dime()
+#        nickel = coins.Nickel()
+#        penny = coins.Penny()
+#        coins_list = [quarter, dime, nickel, penny]
+#        Customer.add_coins_to_wallet(Customer.wallet, coins_list)
+#        self.assertEqual(coins_list)
+
+    def test_add_quarter(self):
+        quarter = coins.Quarter()
+        coins_list = [quarter]
+        added_coin = self.customer.add_coins_to_wallet(self, coins_list)
+        self.assertEqual(added_coin, quarter)
         
-#    def test_add_dime(self):
-#        added_coin = self.customer.add_coins_to_wallet('Dime')
-#        self.assertEqual(added_coin.name, 'Dime')
+    def test_add_dime(self):
+        dime = coins.Dime()
+        coins_list = [dime]
+        added_coin = self.customer.add_coins_to_wallet(self, coins_list)
+        self.assertEqual(added_coin, dime)
         
-#    def test_add_nickel(self):
-#        added_coin = self.customer.add_coins_to_wallet('Nickel')
-#        self.assertEqual(added_coin.name, 'Nickel')
+    def test_add_nickel(self):
+        nickel = coins.Nickel()
+        coins_list = [nickel]
+        added_coin = self.customer.add_coins_to_wallet(self, coins_list)
+        self.assertEqual(added_coin, nickel)
         
-#    def test_add_penny(self):
-#        added_coin = self.customer.add_coins_to_wallet('Penny')
-#        self.assertEqual(added_coin.name, 'Penny')
+    def test_add_penny(self):
+        penny = coins.Penny()
+        coins_list = [penny]
+        added_coin = self.customer.add_coins_to_wallet(self, coins_list)
+        self.assertEqual(added_coin, penny)
         
 if __name__ == '__main__':
     unittest.main()
