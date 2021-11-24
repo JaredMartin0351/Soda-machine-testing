@@ -20,21 +20,21 @@ class SodaMachine(unittest.TestCase):  # Soda Machine Class
         """Instantiates SodaMachine to test"""
         self.SodaMachine = SodaMachine()
 
-    # test runs
-    def test_fill_register(self): # fill register 
-        """Test that register is full of coinage"""
-        """Instantiate a SodaMachine object, test that its register list has a len of 88"""
-        # self.SodaMachine = SodaMachine()
-        full =len(machine.register) 
-        self.assertEqual(full, 88) 
+    # # test runs
+    # def test_fill_register(self): # fill register 
+    #     """Test that register is full of coinage"""
+    #     """Instantiate a SodaMachine object, test that its register list has a len of 88"""
+    #     # self.SodaMachine = SodaMachine()
+    #     full =len(machine.register) 
+    #     self.assertEqual(full, 88) 
 
-    ######
-    # def test_fill_inventory(self):    # fill inventory
-    #     """Instantiate a SodaMachine object, test that its inventory list has a len of 30"""
-    #     # self.sodamachine = SodaMachine()
-    #     self.SodaMachine.fill_inventory.len(30)
-    #     self.assertEqual(self.SodaMachine.fill_inventory.result.len[30], "Coins")
-    #     pass
+    # test runs
+    def test_fill_inventory(self):    # fill inventory
+        """Instantiate a SodaMachine object, test that its inventory list has a len of 30"""
+        # self.sodamachine = SodaMachine()
+        full_inv = len(machine.inventory)
+        self.assertEqual(full_inv, 30)
+        
 
     # def test_get_quarter_from_register(self):  # get Quarter from register 
     #     """Test a Quarter can be returned from register"""
