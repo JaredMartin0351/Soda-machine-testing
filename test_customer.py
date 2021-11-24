@@ -84,12 +84,13 @@ class TestAddCanToBackpack(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
         self.backpack = Backpack()
-        self.can = Can('Cola', .60)
+        self.can = Cola()
         
     def test_add_can(self):
         """Adding a can object to the list of purchased cans"""
-        can = Can('Cola', .60)
-        purchased_cans = [can]
+        can = Cola()
+        purchased_cans = []
+        purchased_cans.append(can)
         self.customer.add_can_to_backpack(can)
         self.assertEqual(purchased_cans[0], can)
         
@@ -98,7 +99,14 @@ class TestAddCanToBackpack(unittest.TestCase):
         
         
         
-    
+#    class TestFillWallet(unittest.TestCase):
+#        def setUp(self):
+#        self.wallet = Wallet()
+        
+        
+#    def test_fill_wallet(self):
+#        self.assertEqual(len(self.wallet.money), 88)
+     
         
         
 
