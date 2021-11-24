@@ -1,9 +1,8 @@
 import unittest
-import user_interface
 from wallet import Wallet
 from customer import Customer
 from backpack import Backpack
-from cans import Can, Cola, RootBeer, OrangeSoda
+from cans import Cola, RootBeer, OrangeSoda
 import coins
 
 
@@ -13,7 +12,6 @@ class TestGetWalletCoin(unittest.TestCase):
         self.customer = Customer()
         self.wallet = Wallet()
         self.backpack = Backpack()
-    
     
     def test_get_quarter(self):
         """Passes in the 'Quarter' object, should return the quarter object"""
@@ -41,7 +39,6 @@ class TestGetWalletCoin(unittest.TestCase):
         self.assertIsNone(returned_obj)
 
     
-    
 class TestAddCoinsToWallet(unittest.TestCase):
     """Test to add coins from a list into the wallet object"""
     def setUp(self):
@@ -65,16 +62,12 @@ class TestAddCoinsToWallet(unittest.TestCase):
         self.assertEqual(cmpare_list,coin_list_blank_len)
         
 
-
-        
-        
 class TestAddCanToBackpack(unittest.TestCase):
     """Test to add can to customers backpack"""
     def setUp(self):
         self.customer = Customer()
         self.backpack = Backpack()
 
-        
     def test_add_can_cola(self):
         """Adding a can object to the list of purchased cans"""
         can = Cola
@@ -95,16 +88,6 @@ class TestAddCanToBackpack(unittest.TestCase):
         self.customer.add_can_to_backpack(can)
         list_len2 = len(self.customer.backpack.purchased_cans)
         self.assertEqual(list_len2,len(self.customer.backpack.purchased_cans))
-        
-        
-
-        
-        
-        
-    
-        
-        
-
         
 if __name__ == '__main__':
     unittest.main()
