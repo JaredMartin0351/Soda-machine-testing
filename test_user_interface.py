@@ -86,6 +86,7 @@ class TestDisplayPaymentValue(unittest.TestCase):
         list_value_41.append(penny)
         truelist = user_interface.display_payment_value(list_value_41)
         self.assertEqual(truelist , .41)
+    
     def test_empty_list(self):
         """Testing the display_payment_value method with a blank list to get a return value of 0"""
         list_value_0 = []
