@@ -49,12 +49,14 @@ class TestAddCoinsToWallet(unittest.TestCase):
         self.nickel = coins.Nickel()
     
     def test_len_of_coins_list(self):
+        """Test len of coin list with addition of 3 more coins to see if orginal len of 88 is updated to 91"""
         coin_list_of_3 = [self.quarter, self.dime, self.nickel]
         self.customer.add_coins_to_wallet(coin_list_of_3)
         coin_list_len = len(self.customer.wallet.money)
         self.assertEqual(coin_list_len,91 )
 
     def test_len_of_zero_coin_list(self):
+        """test len of coin list with 0 aditions to see if return is the same"""
         coin_list_blank = []
         cmpare_list = len(self.customer.wallet.money)
         self.customer.add_coins_to_wallet(coin_list_blank)
