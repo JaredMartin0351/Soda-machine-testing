@@ -35,6 +35,10 @@ class TestGetWalletCoin(unittest.TestCase):
         returned_coin = self.customer.get_wallet_coin('Penny')
         self.assertEqual(returned_coin.name, 'Penny')
         
+    def test_get_none(self):
+        """Passes in the object that should return none"""
+        returned_obj = self.customer.get_wallet_coin('Silver Dollar')
+        self.assertIsNone(returned_obj)
 
     
     
