@@ -12,6 +12,7 @@ class TestGetWalletCoin(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
         self.wallet = Wallet()
+        self.backpack = Backpack()
     
     
     def test_get_quarter(self):
@@ -79,13 +80,48 @@ class TestAddCanToBackpack(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
         self.backpack = Backpack()
-        self.can = Can()
+        self.can = Can('Cola', .60)
         
     def test_add_can(self):
         """Adding a can object to the list of purchased cans"""
-        can = Cola()
+        can = Can('Cola', .60)
         purchased_cans = [can]
-        self.backpack.purchased_cans.add_can_to_backpack
+        self.customer.add_can_to_backpack(can)
+        self.assertEqual(purchased_cans[0], can)
+        
+        
+        
+        
+#    class TestGetUniqueCanNames(unittest.TestCase):
+#        def test_can_name_list(self):
+#        """Testing the get_unique_can_names method with multiple of the same cans """
+#        rootbeer = RootBeer()
+#        rootbeer2 = RootBeer()
+#        cola = Cola()
+#        cola2 = Cola()
+#        orangesoda = OrangeSoda()
+#        orangesoda2 = OrangeSoda()
+#        list_of_can = []
+#        list_of_can.append(rootbeer)
+#        list_of_can.append(rootbeer2)
+#        list_of_can.append(cola)
+#        list_of_can.append(cola2)
+#        list_of_can.append(orangesoda)
+#        list_of_can.append(orangesoda2)
+#        can_checker = user_interface.get_unique_can_names(list_of_can)
+#        self.assertNotEqual(can_checker,list_of_can)
+        
+        
+class TestGatherCoinsFromWallet(unittest.TestCase):
+    """Test to gather selected coins from the wallet"""
+    def setUp(self):
+        self.customer = Customer()
+        customer_payment = []
+        selected_soda = Can('Cola', .60)
+        
+    def test_gather_wallet_coins(self, ):
+        self.customer.gather_coins_from_wallet(self)
+        
         
 if __name__ == '__main__':
     unittest.main()
