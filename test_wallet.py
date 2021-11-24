@@ -1,8 +1,15 @@
 import unittest
 from wallet import Wallet
-import coins
 
 class TestFillWallet(unittest.TestCase):
     def setUp(self):
         self.wallet = Wallet()
-        self.money = []
+        
+        
+    def test_fill_wallet(self):
+        self.assertEqual(len(self.wallet.money), 88)
+     
+            
+if __name__ == '__main__':
+    unittest.main()
+    
