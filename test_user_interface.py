@@ -31,9 +31,6 @@ class Testuserinterface(unittest.TestCase):
         badinput = ((range(random.randint(5,150))))
         selection = user_interface.validate_main_menu(badinput)
         self.assertEqual(selection, (False,None))
-# validate_main_menu – 5 tests
-# a. Pass in each number 1-4, ensure the tuple of (True, number) is returned
-# b. Pass in a different number, ensure (False, None) is returned
 
 
 class TestTryParse(unittest.TestCase):
@@ -48,18 +45,6 @@ class TestTryParse(unittest.TestCase):
         self.assertEqual(string,0)
 
 
-    
-   
-# def try_parse_int(value):
-#     """Attempts to parse a string into an integer, returns 0 if unable to parse"""
-#     try:
-#         return int(value)
-#     except:
-#         return 0
-
-# try_parse_int – 2 tests
-# a. Pass in “10”, ensure the int value 10 is returned
-# b. Pass in “hello”, ensure 0 is returned
 class TestGetUniqueCanNames(unittest.TestCase):
     def test_can_name_list(self):
         """Testing the get_unique_can_names method with multiple of the same cans """
@@ -87,25 +72,6 @@ class TestGetUniqueCanNames(unittest.TestCase):
         self.assertEqual(can_list,check_list)
 
 
-
-
-
-
-
-
-    # def get_unique_can_names(inventory):
-    # """Loops through inventory to create a list of all distinct types of sodas available"""
-    # unique_cans = []
-    # previous_names = []
-    # for can in inventory:
-    #     if can.name in previous_names:
-    #         continue
-    #     else:
-    #         unique_cans.append(can)
-    #         previous_names.append(can.name)
-    # return unique_cans
-
-
 class TestDisplayPaymentValue(unittest.TestCase):
     def test_coin_value(self):
         """Testing the display_payment_value method with all coins that add up to .41"""
@@ -125,10 +91,6 @@ class TestDisplayPaymentValue(unittest.TestCase):
         list_value_0 = []
         list0 = user_interface.display_payment_value(list_value_0)
         self.assertEqual(list0,0)
-
-# display_payment_value – 2 tests
-# a. Instantiate each of the 4 coin types and append them to a list. Pass the list into this function, ensure the returned values is .41
-# b. Pass in an empty list. Ensure the returned value is 0.
 
 class TestValidateCoinSelection(unittest.TestCase):
     
@@ -151,6 +113,11 @@ class TestValidateCoinSelection(unittest.TestCase):
         """Testing validate_coin_selection with input of (4) to get True and Penny as a return"""
         penny_tuple = user_interface.validate_coin_selection(4)
         self.assertEqual(penny_tuple,(True, "Penny"))
+        
+    def test_coin_sel_5(self):
+        """Testing validate_coin_selection with input of (5) to get True, Done as a return"""
+        false_tuple = user_interface.validate_coin_selection(5)
+        self.assertEqual(false_tuple,(True, "Done"))
 
     def test_coin_sel_other(self):
         """Testing validate_coin_selection with input other than 1,2,3,4
