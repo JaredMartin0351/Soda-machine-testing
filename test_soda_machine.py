@@ -29,38 +29,43 @@ class SodaMachine(unittest.TestCase):  # Soda Machine Class
     #     self.assertEqual(full, 88) 
 
     # test runs
-    def test_fill_inventory(self):    # fill inventory
-        """Instantiate a SodaMachine object, test that its inventory list has a len of 30"""
-        # self.sodamachine = SodaMachine()
-        full_inv = len(machine.inventory)
-        self.assertEqual(full_inv, 30)
+    # def test_fill_inventory(self):    # fill inventory
+    #     """Instantiate a SodaMachine object, test that its inventory list has a len of 30"""
+    #     # self.sodamachine = SodaMachine()
+    #     full_inv = len(machine.inventory)
+    #     self.assertEqual(full_inv, 30)
         
-
+    # test runs
     # def test_get_quarter_from_register(self):  # get Quarter from register 
     #     """Test a Quarter can be returned from register"""
     #     coin = machine.get_coin_from_register('Quarter')
     #     print(coin)
     #     self.assertEqual(coin.name, 'Quarter')
 
+    # test runs
     # def test_get_dime_from_register(self):  # get coin from register
     #     """Test a Dime can be returned from register"""
     #     coin = machine.get_coin_from_register('Dime')
     #     self.assertEqual(coin.name, 'Dime')
 
+    # test runs
     # def test_get_nickel_from_register(self):  # get coin from register
     #     """Test a Nickel can be returned from register"""
     #     coin = machine.get_coin_from_register('Nickel')
     #     self.assertEqual(coin.name, 'Nickel')
 
+    # test runs
     # def test_get_penny_from_register(self):  # get coin from register
     #     """Test a Penny can be returned from register"""
     #     coin = machine.get_coin_from_register('Penny')
     #     self.assertEqual(coin.name, 'Penny')
 
+    # test runs 
     # def test_get_string_from_register(self):  # get coin from register
     #     """Test that passing in a string that is not a valid coin name will return None"""
-    #     coin = machine.get_coin_from_register('dollar')
-    #     self.assertNotEqual(coin.name, False)
+    #     coin_name = machine.get_coin_from_register('dollar')
+    #     self.assertIsNone(coin_name)
+
 
     # def test_register_has_quarter(self):  # register has coin
     #     """Test that Quarter will return True"""
