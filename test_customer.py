@@ -134,7 +134,7 @@ class TestCheckBackpack(unittest.TestCase):
         
         
     def test_check_backpack(self):
-        purchased_cans = []
+        purchased_cans = [self.cola, self.rootbeer]
         self.customer.check_backpack()
         self.assertEqual(Cola, RootBeer)
         
