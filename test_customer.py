@@ -126,17 +126,7 @@ class TestAddCanToBackpack(unittest.TestCase):
 #        self.assertNotEqual(can_checker,list_of_can)
         
         
-class TestCheckBackpack(unittest.TestCase):
-    def setUp(self):
-        self.customer = Customer()
-        self.cola = Cola()
-        self.rootbeer = RootBeer()
-        
-        
-    def test_check_backpack(self):
-        purchased_cans = [self.cola, self.rootbeer]
-        self.customer.check_backpack()
-        self.assertEqual(Cola, RootBeer)
+
         
 if __name__ == '__main__':
     unittest.main()
