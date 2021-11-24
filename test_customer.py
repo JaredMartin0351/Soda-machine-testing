@@ -3,7 +3,7 @@ import user_interface
 from wallet import Wallet
 from customer import Customer
 from backpack import Backpack
-from cans import Can, Cola, RootBeer
+from cans import Can, Cola, RootBeer, OrangeSoda
 import coins
 
 
@@ -47,36 +47,25 @@ class TestAddCoinsToWallet(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
         self.wallet = Wallet()
+        self.quarter = coins.Quarter()
+        self.dime = coins.Dime()
+        self.nickel = coins.Nickel()
     
+    def test_len_of_coins_list(self):
+        coin_list_of_3 = [self.quarter, self.dime, self.nickel]
+        self.customer.add_coins_to_wallet(coin_list_of_3)
+        coin_list_len = len(self.customer.wallet.money)
+        self.assertEqual(coin_list_len,91 )
+
+    def test_len_of_zero_coin_list(self):
+        coin_list_blank = []
+        cmpare_list = len(self.customer.wallet.money)
+        self.customer.add_coins_to_wallet(coin_list_blank)
+        coin_list_blank_len = len(self.customer.wallet.money)
+        self.assertEqual(cmpare_list,coin_list_blank_len)
         
 
-    def test_add_quarter(self):
-        """Adding a quarter object to the wallet"""
-        quarter = coins.Quarter
-        coins_list = [quarter]
-        self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(coins_list[0], quarter)
-        
-    def test_add_dime(self):
-        """Adding a dime object to the wallet"""
-        dime = coins.Dime
-        coins_list = [dime]
-        self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(coins_list[0], dime)
-        
-    def test_add_nickel(self):
-        """Adding a nickel object to the wallet"""
-        nickel = coins.Nickel
-        coins_list = [nickel]
-        self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(coins_list[0], nickel)
-        
-    def test_add_penny(self):
-        """Adding a penny object to the wallet"""
-        penny = coins.Penny
-        coins_list = [penny]
-        self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(coins_list[0], penny)
+
         
         
 class TestAddCanToBackpack(unittest.TestCase):
@@ -84,34 +73,39 @@ class TestAddCanToBackpack(unittest.TestCase):
     def setUp(self):
         self.customer = Customer()
         self.backpack = Backpack()
-        self.can = Cola()
+
         
-    def test_add_can(self):
+    def test_add_can_cola(self):
         """Adding a can object to the list of purchased cans"""
-        can = Cola()
-        purchased_cans = []
-        purchased_cans.append(can)
+        can = Cola
         self.customer.add_can_to_backpack(can)
-        self.assertEqual(purchased_cans[0], can)
+        list_len2 = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(list_len2,len(self.customer.backpack.purchased_cans))
+       
+    def test_add_can_rootbeer(self):
+        """Adding a can object to the list of purchased cans"""
+        can = RootBeer
+        self.customer.add_can_to_backpack(can)
+        list_len2 = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(list_len2,len(self.customer.backpack.purchased_cans))
+
+    def test_add_can_orange_soda(self):
+        """Adding a can object to the list of purchased cans"""
+        can = OrangeSoda
+        self.customer.add_can_to_backpack(can)
+        list_len2 = len(self.customer.backpack.purchased_cans)
+        self.assertEqual(list_len2,len(self.customer.backpack.purchased_cans))
         
         
 
         
         
         
-#    class TestFillWallet(unittest.TestCase):
-#        def setUp(self):
-#        self.wallet = Wallet()
-        
-        
-#    def test_fill_wallet(self):
-#        self.assertEqual(len(self.wallet.money), 88)
-     
+    
         
         
 
         
 if __name__ == '__main__':
     unittest.main()
-    
     
