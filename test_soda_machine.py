@@ -20,7 +20,7 @@ class SodaMachine(unittest.TestCase):  # Soda Machine Class
         """Instantiates SodaMachine to test"""
         self.SodaMachine = SodaMachine()
 
-    # runs
+    # test runs
     def test_fill_register(self): # fill register 
         """Test that register is full of coinage"""
         """Instantiate a SodaMachine object, test that its register list has a len of 88"""
